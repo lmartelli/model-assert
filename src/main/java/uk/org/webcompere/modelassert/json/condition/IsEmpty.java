@@ -11,6 +11,16 @@ import uk.org.webcompere.modelassert.json.Result;
  * Detect whether a node is present, but empty
  */
 public class IsEmpty implements Condition {
+    private static final IsEmpty INSTANCE = new IsEmpty();
+
+    /**
+     * Access the one and only instance
+     *
+     * @return the NullCondition instnace
+     */
+    public static IsEmpty getInstance() {
+        return INSTANCE;
+    }
 
     @SuppressFBWarnings(value = "BC_UNCONFIRMED_CAST",
             justification = "Node type is used in place of instanceof for the switch")
